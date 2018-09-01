@@ -8,16 +8,21 @@ services:
     environment:
       POSTGRES_USER: example
       POSTGRES_PASSWORD: example
+    ports:
+      - 5432:5432
 
   adminer:
     image: adminer
     restart: always
     ports:
-      - 8080:8080
+      - 9080:8080
 
   app:
-    image: spring-hiber
+    image: spring-hiber-image
     restart: always
     environment:
+      DB-URL: spring-hiber_db_1
       DB-USER: example
       DB-PASS: example
+    ports:
+      - 8080:8080
