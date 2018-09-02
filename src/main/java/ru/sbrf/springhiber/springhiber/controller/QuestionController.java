@@ -18,6 +18,12 @@ public class QuestionController {
     @Autowired
     private QuestionRepository questionRepository;
 
+    @GetMapping("/")
+    public String getStart(Pageable pageable) {
+        return "ahaaaa";
+    }
+
+
     @GetMapping("/questions")
     public Page<Question> getQuestions(Pageable pageable) {
         return questionRepository.findAll(pageable);
