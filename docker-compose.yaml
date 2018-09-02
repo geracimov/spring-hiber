@@ -1,4 +1,4 @@
-version: '3.7'
+version: '3'
 
 services:
 # https://hub.docker.com/_/postgres/
@@ -21,7 +21,8 @@ services:
     image: spring-hiber-image
     restart: always
     environment:
-      DB-URL: spring-hiber_db_1
+#      DB-URL: 172.19.0.2
+      DB-URL: db
       DB-USER: example
       DB-PASS: example
     ports:
