@@ -12,13 +12,14 @@ import java.util.logging.Logger;
 @SpringBootApplication
 @EnableJpaAuditing
 public class SpringHiberApplication {
-    public static Logger logger = Logger.getLogger( "2343.txt" );
+    private static Logger log = Logger.getLogger( SpringHiberApplication.class.getName() );
 
     public static void main( String[] args ) {
+        log.info( "eeeeeeeeeeeeeeeeeeeeeeeeeee" );
         Map<String, String> enviorntmentVars = System.getenv();
-        enviorntmentVars.entrySet().forEach( t -> logger.log( Level.ALL, t.toString() ) );
+        enviorntmentVars.entrySet().stream().filter( t -> t.getKey().contains( "DB" ) ).forEach( t -> log.info( t.toString() ) );
 
-        SpringApplication.run( SpringHiberApplication.class, args );
+//        SpringApplication.run( SpringHiberApplication.class, args );
     }
 }
 
