@@ -4,14 +4,19 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
+import java.util.Map;
+
 //https://www.callicoder.com/spring-boot-jpa-hibernate-postgresql-restful-crud-api-example/
 @SpringBootApplication
 @EnableJpaAuditing
 public class SpringHiberApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(SpringHiberApplication.class, args);
-	}
+    public static void main( String[] args ) {
+        Map<String, String> enviorntmentVars = System.getenv();
+        enviorntmentVars.entrySet().forEach( System.out::println );
+
+        SpringApplication.run( SpringHiberApplication.class, args );
+    }
 }
 
 /*
