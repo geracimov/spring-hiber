@@ -22,8 +22,8 @@ services:
     restart: always
     environment:
 #      DB-URL: 172.19.0.2
-      DB-URL: db
-      DB-USER: example
-      DB-PASS: example
+      DB_URL: db
+      DB_USER: example
+      DB_PASS: example
     ports:
       - 8080:8080
